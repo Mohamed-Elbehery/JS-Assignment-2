@@ -1,0 +1,49 @@
+* {
+  margin: 0;padding: 0;box-sizing: border-box;
+}
+
+html {
+  cursor: none;
+}
+
+body {
+  /* background-image: url('../assets/Space.jpg');  */
+  background-color: black;
+  overflow: hidden;
+}
+
+.rocket {
+  width: 100px;
+  position: absolute;
+  inset: auto auto 2rem 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease-out;
+}
+
+.rocket img {
+  width: 100%;
+}
+
+.bullet {
+  width: 25px;
+  position: absolute;
+  inset: auto auto 15% 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease-out;
+  z-index: -1;
+}
+
+.bullet img {
+  width: 100%;
+}
+
+.cursor {
+  width: 50px;
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cursor img {
+  width: 100%;
+}
