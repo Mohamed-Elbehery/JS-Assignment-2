@@ -21,6 +21,7 @@ body {
   position: absolute;
   inset: auto auto 2rem 50%;
   transform: translateX(-50%);
+  transition: 0.8s ease-out;
 }
 
 .rocket img {
@@ -32,6 +33,7 @@ body {
   position: absolute;
   inset: auto auto 15% 50%;
   transform: translateX(-50%);
+  transition: 0.8s ease-out;
   z-index: -1;
 }
 
