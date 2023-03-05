@@ -1,5 +1,7 @@
 * {
-  margin: 0;padding: 0;box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -7,8 +9,10 @@ html {
 }
 
 body {
-  /* background-image: url('../assets/Space.jpg');  */
+  background-image: url("../assets/Space.jpg");
   background-color: black;
+  background-size: cover;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -17,7 +21,6 @@ body {
   position: absolute;
   inset: auto auto 2rem 50%;
   transform: translateX(-50%);
-  transition: 0.3s ease-out;
 }
 
 .rocket img {
@@ -29,7 +32,6 @@ body {
   position: absolute;
   inset: auto auto 15% 50%;
   transform: translateX(-50%);
-  transition: 0.3s ease-out;
   z-index: -1;
 }
 
@@ -46,4 +48,10 @@ body {
 
 .cursor img {
   width: 100%;
+}
+
+@media screen and (min-width: 1367px) {
+  .bullet {
+    bottom: 8%;
+  }
 }

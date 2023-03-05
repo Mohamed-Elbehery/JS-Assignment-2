@@ -2,6 +2,7 @@
 const rocket = document.querySelector('.rocket');
 const bullet = document.querySelector('.bullet');
 const cursor = document.querySelector('.cursor');
+
 let finished = false;
 let xAxis = 0;
 let yAxis = 0;
@@ -12,13 +13,13 @@ document.addEventListener('keydown', (e) => {
   if(e.code == "ArrowRight") {
     xAxis++;
     rocket.style.left = `${xAxis * 2 + 50}%`;
-    bullet.style.transition = "0.3s ease-out";
+    bullet.style.transition = "0.8s ease-out";
     bullet.style.left = `${xAxis * 2 + 50}%`;
   //TODO Arrow Left
   } else if(e.code == "ArrowLeft") {
     xAxis--;
     rocket.style.left = `${xAxis * 2 + 50}%`;
-    bullet.style.transition = "0.3s ease-out";
+    bullet.style.transition = "0.8s ease-out";
     bullet.style.left = `${xAxis * 2 + 50}%`;
   //TODO Arrow Up
   } else if(e.code == "ArrowUp") {
@@ -27,7 +28,7 @@ document.addEventListener('keydown', (e) => {
       bullet.style.transition = "0s";
       bullet.style.bottom = "15%";
     } else {
-      bullet.style.transition = "0.3s ease-out";
+      bullet.style.transition = "0.8s ease-out";
     }
     //! Bullet & Rocket Style
     yAxis++;
@@ -40,7 +41,7 @@ document.addEventListener('keydown', (e) => {
       bullet.style.transition = "0s";
       bullet.style.bottom = "15%";
     } else {
-      bullet.style.transition = "0.3s ease-out";
+      bullet.style.transition = "0.8s ease-out";
     }
     //! Bullet & Rocket Style
     yAxis--;
@@ -51,8 +52,15 @@ document.addEventListener('keydown', (e) => {
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
     document.body.style.backgroundColor = "#" + randomColor;
     //! Bullet Firing
-    bullet.style.transition = "0.3s ease-out";
+    bullet.style.transition = "0.8s ease-out";
     bullet.style.bottom = "100%";
+    document.querySelector('audio').play();
+    // to load the sound after each shot
+    setInterval(() => {
+      if(document.querySelector('audio').currentTime > 0.75) {
+        document.querySelector('audio').load();
+      }
+    }, 0);
   }
 });
 
