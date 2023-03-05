@@ -1,13 +1,11 @@
-// Vars
+//* Vars
 const rocket = document.querySelector('.rocket');
 const bullet = document.querySelector('.bullet');
 const cursor = document.querySelector('.cursor');
-
-let finished = false;
 let xAxis = 0;
 let yAxis = 0;
 
-// Events & Functions 
+//* Events & Functions 
 document.addEventListener('keydown', (e) => {
   //TODO Arrow Right
   if(e.code == "ArrowRight") {
@@ -49,13 +47,14 @@ document.addEventListener('keydown', (e) => {
     bullet.style.bottom = `${yAxis * 2 + 6}rem`;
   //TODO Space
   } else if(e.code == "Space") {
+    //! Change Background Color Randomly
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
     document.body.style.backgroundColor = "#" + randomColor;
     //! Bullet Firing
     bullet.style.transition = "0.8s ease-out";
     bullet.style.bottom = "100%";
     document.querySelector('audio').play();
-    // to load the sound after each shot
+    //! to reset the sound after each shot
     setInterval(() => {
       if(document.querySelector('audio').currentTime > 0.75) {
         document.querySelector('audio').load();
@@ -64,11 +63,13 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+//* to get the bullet behind the rocket again
 bullet.addEventListener('transitionend', () => {
   bullet.style.transition = "0s";
   bullet.style.bottom = `${yAxis * 2 + 6}rem`;
 });
 
+//* Custom Cursor
 document.addEventListener('mousemove', (e) => {
   cursor.style.left = `${e.clientX}px`
   cursor.style.top = `${e.clientY}px`
